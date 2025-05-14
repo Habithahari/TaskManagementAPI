@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="DBFiles\" />
+    <Folder Include="CodeFix\" />
   </ItemGroup>
 
 </Project>

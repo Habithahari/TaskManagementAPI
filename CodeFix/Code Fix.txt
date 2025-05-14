@@ -1,0 +1,37 @@
+public class TaskService
+{
+    private readonly DbContext _dbContext;
+
+    public TaskService(DbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+
+    public async Task<Task> GetTask(int id)
+    {
+        try
+        {
+            return await _dbContext.Tasks.FirstOrDefaultAsync(t => t.Id == id);
+        }
+        catch (Exception ex)
+        {
+            // Log the error
+            Console.WriteLine($"Error getting task with ID {id}");
+            throw; // Re-throw 
+        }
+    }
+
+    public async Task<List<Task>> GetAllTasks()
+    {
+        try
+        {
+            return await _dbContext.Tasks.ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            // Log the error
+            Console.WriteLine($"Error getting all tasks");
+            throw;
+        }
+    }
+}

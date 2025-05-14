@@ -1,0 +1,11 @@
+Added async keyword to both methods
+
+Added await before the async EF Core methods
+
+Changed return type of GetAllTasks() from List<Task> to Task<List<Task>>
+
+Added try-catch blocks 
+
+Added basic error logging
+
+Re-throwing exceptions to let callers handle them appropriately
