@@ -20,8 +20,7 @@ namespace TaskManagementAPI.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto userLogin)
         {
-            // In a real app, validate against database
-            // This is simplified for example
+            // This is example username and password for admin and user for generating tokens
             if (userLogin.Username == "admin" && userLogin.Password == "admin123")
             {
                 var user = new User { Username = userLogin.Username, Role = "Admin" };

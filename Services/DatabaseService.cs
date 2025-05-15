@@ -14,7 +14,9 @@ namespace TaskManagementAPI.Services
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
+        
 
+        //for get the tasks by Id
         public async Task<TaskModel> GetTaskById(int id)
         {
             using var connection = new SqlConnection(_connectionString);
@@ -24,6 +26,7 @@ namespace TaskManagementAPI.Services
                 commandType: System.Data.CommandType.StoredProcedure);
         }
 
+        //for getting the tasks by userId
         public async Task<IEnumerable<TaskModel>> GetTasksByUserId(int userId)
         {
             using var connection = new SqlConnection(_connectionString);
@@ -33,6 +36,8 @@ namespace TaskManagementAPI.Services
                 commandType: System.Data.CommandType.StoredProcedure);
         }
 
+
+        //for creating the task in tasks table
         public async Task<int> CreateTask(TaskModel taskModel)
         {
             using var connection = new SqlConnection(_connectionString);
