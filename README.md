@@ -1,4 +1,4 @@
-Task Management AP
+Task Management API
 1.Created TaskManagementAPI project in visual studio 2022 with .net core 8.0.
 2.TaskManagementAPI has endpoints for Authentication and Task Management.
 3.Authentication endpoint POST/api/Auth/login can authenticate the users( admin or user) and can generate the token. 
